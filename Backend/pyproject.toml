@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "api"
+version = "0.1.0"
+description = "Security Compliance POC"
+authors = [
+  "Ravi Tiwari <ravitwr29@gmail.com>",
+]
+license = "Proprietary"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.11"
+Flask = "2.3.3"
+Flask-Migrate = "4.0.5"
+Flask-SQLAlchemy = "3.1.1"
+numpy = "1.25.2"
+azure-search-documents = "11.4.0b6"
+azure-identity = "1.14.0b2"
+azure-storage-blob = "12.17.0"
+python-dotenv = "1.0.0"
+azure-ai-formrecognizer = "3.3.0"
+PyMuPDF = "1.23.7"
+PyMySQL = "1.1.0"
+Cerberus = "1.3.5"
+gunicorn = "21.2.0"
+cryptography = "41.0.4"
+pdfminer = "20191125"
+opensearch-py = "2.4.2"
+langchain = "^0.1.8"
+openai = "^1.12.0"
+tiktoken = "^0.6.0"
+langchain-openai = "^0.0.6"
+flask-restx = "^1.3.0"
+flask-marshmallow = "^1.2.0"
+marshmallow = "^3.21.0"
+marshmallow-sqlalchemy = "^1.0.0"
+flask-cors = "^4.0.0"
+chromadb = "^0.4.24"
+pdfplumber = "^0.11.0"
+pypdf = "^4.1.0"
+pandas = "^2.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "7.4.2"
+pytest-mock = "3.11.1"
+pytest-cov = "4.1.0"
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+format-check = "ruff format --check ."
+import-check = "ruff check --select \"I\" --select \"F401\" ."
+whitespace-check = "ruff check --select \"W291,W292,W293\" ."
+lint-check = "ruff check --ignore \"I,F401,W291,W292,W293\" ."
+type-check = "pyright ."
+unit-tests = "pytest --verbose --verbose --cov=. tests"

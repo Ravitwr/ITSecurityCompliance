@@ -1,0 +1,7 @@
+{
+    "reportMissingTypeStubs": true,
+    "typeCheckingMode": "basic",
+    "stubPath": "typings",
+    "exclude": [".venv","tests","controller/auth.py","controller/error_handler.py"]
+  }
+  

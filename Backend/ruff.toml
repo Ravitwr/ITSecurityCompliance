@@ -1,0 +1,24 @@
+line-length=120
+extend-exclude = [
+  "tests","controller/auth.py","controller/error_handler.py"
+]
+[format]
+line-ending = "lf"
+
+[lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # trailing-whitespace, missing-newline-at-end-of-file, blank-line-with-whitespace
+    "W291", "W292", "W293"
+]
